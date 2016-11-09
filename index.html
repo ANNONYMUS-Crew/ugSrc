@@ -1,0 +1,72 @@
+<!doctype html>
+<html ng-app="app" >
+<head>
+    <!--<meta charset="utf-8">-->
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+
+    <link rel=stylesheet type="text/css" href="css/bootstrap.css">
+    <link rel=stylesheet type="text/css" href="css/bootstrap-theme.min.css">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel=stylesheet type="text/css" href="css/main.css">
+
+
+    <script src="js/jQueryv3.1.1.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/smooth-scroll.min.js"></script>
+
+    <script src="app/app.js"></script>
+    <!--<script src="app/logINapp.js"></script>-->
+    <script src="js/modules/footerbar/footerbar.js"></script>
+    <script src="js/modules/footerbar/footerDirective.js"></script>
+    <script src="js/modules/footerbar/footerController.js"></script>
+    <script src="js/modules/menu/menubar.js"></script>
+    <script src="js/modules/menu/menuController.js"></script>
+    <script src="js/modules/menu/menuDirective.js"></script>
+    <script src="js/modules/dashboard/dashmenu.js"></script>
+    <script src="js/modules/dashboard/dashMenuController.js"></script>
+    <script src="js/modules/dashboard/dashMenuDirective.js"></script>
+    <script src="js/modules/dashboard/dashMenuItemDirective.js"></script>
+    <title></title>
+</head>
+<body  class="container-fluid" ng-cloak>
+
+<menu-bar></menu-bar>
+<div ui-view></div>
+<footer-bar></footer-bar>
+<!--Scroll button-->
+<a data-scroll class="move_top" href="#top" hidden>
+    <i class="fa fa-angle-up"></i>
+</a>
+<!-- Script -->
+<script>
+    new WOW().init();
+</script>
+
+<!--Scroll to top-->
+<script>
+    $(document).ready(function () {
+
+        //Check to see if the window is top if not then display button
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 300) {
+                $('.move_top').fadeIn();
+            } else {
+                $('.move_top').fadeOut();
+            }
+        });
+
+        //Click event to scroll to top
+        $('.move_top').click(function () {
+            $('html, body').animate({scrollTop: 0}, 800);
+            return false;
+        });
+
+    });
+</script>
+
+</body>
+</html>
